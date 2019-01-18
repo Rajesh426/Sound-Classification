@@ -27,7 +27,7 @@ def extract_features(parent_dir,sub_dirs,file_ext="*.wav",bands = 60, frames = 4
     for l, sub_dir in enumerate(sub_dirs):
         for fn in glob.glob(os.path.join(parent_dir, sub_dir, file_ext)):
             sound_clip,s = librosa.load(fn)
-            label =  fn.split('\\')[2].split('-')[3].split('.')[0]
+            label =  sub_dir
             for (start,end) in windows(sound_clip,window_size):
                 #print(start)
                 #print(end)
@@ -138,35 +138,4 @@ plt.ylabel('loss')
 plt.xlabel('epoch')
 plt.legend(['train', 'Val'], loc='upper left')
 plt.show()
-# expected input data shape: (batch_size, timesteps, data_dim)
-'''
-model = Sequential()
-model.add(LSTM(32, return_sequences=True,
-               input_shape=(timesteps, data_dim)))  # returns a sequence of vectors of dimension 32
-model.add(LSTM(32, return_sequences=True))  # returns a sequence of vectors of dimension 32
-model.add(LSTM(32))  # return a single vector of dimension 32
-model.add(Dense(3, activation='softmax'))
-model.compile(loss='categorical_crossentropy',
-              optimizer='rmsprop',
-              metrics=['accuracy'])
-history=model.fit(x_train, y_train,
-          batch_size=64, epochs=20,
-          validation_data=(x_val, y_val))
 
-print(history.history.keys())
-plt.plot(history.history['acc'])
-plt.plot(history.history['val_acc'])
-plt.title('model accuracy')
-plt.ylabel('accuracy')
-plt.xlabel('epoch')
-plt.legend(['train', 'Val'], loc='upper left')
-plt.show()
-
-plt.plot(history.history['loss'])
-plt.plot(history.history['val_loss'])
-plt.title('model loss')
-plt.ylabel('loss')
-plt.xlabel('epoch')
-plt.legend(['train', 'Val'], loc='upper left')
-plt.show()
-'''
