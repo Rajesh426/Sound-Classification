@@ -6,3 +6,6 @@ Consist of different Deep learning Algorithms for Sound Classificatin
  If need to classify the data into three different classes then there shoould be three different sub_dirs in the Dataset Directory <br>
  the three sub directories are names as 0,1,2 etc
  
+# Packages necessary are <br>
+ -> librosa for features calculating from the speech signal <br>
+ --> 
