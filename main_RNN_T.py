@@ -61,7 +61,7 @@ def one_hot_encode(labels):
     one_hot_encode[np.arange(n_labels), labels] = 1
     return one_hot_encode
 # Loading the speech data from the Dataset2 folder
-parent_dir = 'Dataset2'
+parent_dir = 'Dataset'
 sub_dirs= ['0','1','2']
 features,labels = extract_features(parent_dir,sub_dirs)
 labels = one_hot_encode(labels)
