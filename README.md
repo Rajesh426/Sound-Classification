@@ -7,5 +7,9 @@ Consist of different Deep learning Algorithms for Sound Classificatin
  the three sub directories are names as 0,1,2 etc
  
 # Packages necessary are <br>
- -> librosa for features calculating from the speech signal <br>
- --> 
+ **librosa** for features calculating from the speech signal <br>
+ **numpy** for matrix manuplations <br>
+ **matplotlib** for plots <br>
+ **Tensorflow** backend deeplearning library <br>
+ **Keras**  Deeplearning wrap 
+**Python 3** Programming language
